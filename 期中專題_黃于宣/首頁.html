@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美球水餃</title>
+    <link href="./img cs/logom0728小正.png" rel="icon" type="gif">
+    <link rel="stylesheet" href="./首頁.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./jquery-3.7.0.min.js"></script>
+    <script src="./jquery-ui.js"></script>
+
+    <style></style>
+</head>
+
+<body>
+
+    <div id="NAV">
+        <header>
+
+            <!-- 導覽列 -->
+            <div id="logo">
+                <a href="./首頁.html"><img style="height: 80%;" src="./img cs/logom0728.png" alt="美球水餃"></a>
+
+            </div>
+            <nav>
+                <ul class="menu">
+                    <!-- https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp -->
+                    <li><a href="./product.html">所有產品</a>
+                        <!-- <a>餃類</a>
+                            <option>餛飩</option>
+                            <option>保冷袋</option>
+                        </select> -->
+                    </li>
+                    <li><a href="./store.html">門市資訊</a></li>
+                    <li><a href="./FAQ.html">訂購須知</a></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+
+                </ul>
+
+            </nav>
+            <!-- <div class="fBlock">
+                <div id="cart">
+                    <img src="../小專題/img cs/images.jpg" alt="購物車" style="width: 30px;justify-content: center;">
+                </div>
+                <div id="member">
+                    <img src="../小專題/img cs/user-icon.png" alt="會員中心" style="width: 30px;">
+                </div>
+            </div> -->
+
+
+            
+        </header>
+        
+    </div>
+    <!-- 會員登入/購物車/社群 -->
+    <div id="icons">
+        <a href="./購物車.html"><i id="cartIcon" class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <div id="pN"></div>
+        </a>
+        <hr color="white">
+        <a href="./signin.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+    </div>
+
+    <!-- Banner:輪播圖 -->
+
+    <div class="SScontainer">
+        <div class="SS">
+            <a href="./餛飩.html"><img src="./img_product/banner1.jpg"></a>
+        </div>
+
+        <div class="SS">
+            <img src="./img_product/banner2.jpeg">
+        </div>
+
+        <div class="SS">
+            <img src="./img_product/banner3.jpeg">
+        </div>
+    </div>
+    <br>
+    <div class="SScontainer">
+        <div class="SS2">
+            <img src="./img_product/banner4.jpg">
+        </div>
+
+        <div class="SS2">
+            <img src="./img_product/banner3.jpeg">
+        </div>
+
+        <div class="SS2">
+            <img src="./img_product/banner1.jpg">
+        </div>
+
+    </div>
+    <div id="pageBottom">
+        <hr>
+        <a href="https://www.facebook.com/profile.php?id=100064288114627"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100064288114627"><i class="fa fa-instagram"></i></a>
+        <a href="mailto:meicho@gmail.com">客服信箱：meicho@gmail.com</a>
+
+    </div>
+</body>
+<script>
+    $(function () {
+        cart = [];
+        cart = JSON.parse(localStorage.getItem("cart"))
+        if(cart.length > 0){
+            pN.innerText = cart.length
+            $("#pN").css("background-color","white");
+            $("#pN").css("border-color","rgb(193, 39, 45)");
+        }
+
+        let slideindex = 0;
+        slideschange();
+        function slideschange() {
+            let i;
+            let slides = document.getElementsByClassName('SS');
+            // 取得圖片陣列
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            if (slideindex >= slides.length) {
+                slideindex = 1
+            } else {
+                slideindex++;
+            };
+            slides[slideindex - 1].style.display = "block";
+
+            setTimeout(slideschange, 2500);
+
+        }
+
+        // let slideindex2 = 0;
+        // slideschange2();
+        // function slideschange2() {
+        //     let j;
+        //     let slides2 = document.getElementsByClassName('SS2');
+        //     // 取得圖片陣列
+        //     for (j = 0; j < slides.length; j++) {
+        //         slides2[j].style.display = "none";
+        //     }
+        //     if (slideindex2 >= slides2.length) {
+        //         slideindex2 = 1
+        //     } else {
+        //         slideindex2++;
+        //     };
+        //     slides2[slideindex2 - 1].style.display = "block";
+
+        //     setTimeout(slideschange2, 2500);
+
+        // }
+    })
+</script>
+
+</html>

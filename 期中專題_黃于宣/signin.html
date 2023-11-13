@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美球水餃-所有產品</title>
+    <link href="./img cs/logom0728小正.png" rel="icon" type="gif">
+    <link rel="stylesheet" href="./首頁.CSS">
+    <link href="./首頁.CSS" rel="stylesheet" type="text/css">
+    <link href="./signin.css" rel="stylesheet" type="text/css">
+    <script src="./jquery-3.7.0.min.js"></script>
+    <script src="./jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div id="NAV">
+        <header>
+
+            <!-- 導覽列 -->
+            <div id="logo">
+                <a href="./首頁.html"><img style="height: 80%;" src="./img cs/logom0728.png" alt="美球水餃"></a>
+
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="./product.html">所有產品</a>
+                      
+                    </li>
+                    <li><a href="./store.html">門市資訊</a></li>
+                    <li><a href="./FAQ.html">訂購須知</a></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+
+                </ul>
+
+            </nav>
+            
+        </header>
+    </div>
+    <hr color="darkred">
+    <div id="icons">
+        <a href="./購物車.html"><i id="cartIcon" class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <div id="pN"></div>
+        </a>
+        <hr color="white">
+        <a href="./signin.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+    </div>
+    <div class="container">
+        <!-- 左 -->
+        <div id="leftBlock"></div>
+        <!-- 中 -->
+        <div id="centerBlock">
+            <!-- 會員登入 -->
+            <div id="Block">
+
+                <button id="signin" onclick="signin()" style="border-right: 1px darkred solid;">會員登入</button>
+                <button id="register" onclick="register()" style="color: gray;">會員註冊</button>
+                <p></p>
+                <!-- <hr style="border: 2px solid darkred;border-radius: 2px;"> -->
+                <form id="Sblock">
+                    <label for="account">帳號</label><input type="email" id="account" placeholder="請輸入e-mail"
+                        required><br>
+                    <label for="password">密碼</label><input type="password" id="password" placeholder="請輸入密碼"
+                        required><br>
+                    <label for="vCode">驗證碼</label><input type="text" id="vCode" placeholder="請輸入驗證碼" required><br>
+                    <div>
+                        <div id="R">
+                            <input type="checkbox" id="remember"><label for="remember">&nbsp;記住我的email</label>
+                        </div>
+                        <div id="F">
+                            <button id="forgetPW">忘記密碼</button>
+                        </div>
+                    </div>
+                    <br>
+                    <p></p>
+                    <input type="submit" class="signinbn" value="登入" onclick="validCheck()">
+                </form>
+
+                <form id="Rblock" style="display: none;">
+                    <label for="ac">帳號</label><input type="email" id="ac" placeholder="請輸入e-mail" required><br>
+                    <label for="phoneNumber">手機</label><input type="tel" id="phoneNumber" placeholder="格式：0912345678"
+                        required><br>
+                    <label for="pw">密碼</label><input type="password" id="pw" placeholder="請輸入密碼" required><br>
+                    <label for="pwConfirm">確認密碼</label><input type="password" id="pwConfirm" placeholder="請再次輸入密碼"
+                        required>
+                    <!-- <button id="togglePW" onclick="togglePW()"><img width="20px" src="./img cs/顯示密碼.png" alt="顯示密碼"></button> -->
+                    <br>
+                    <label for="vCodeR">驗證碼</label><input type="text" id="vCodeR" placeholder="請輸入驗證碼" required><br>
+                    <p></p>
+                    <input type="submit" class="signinbn" value="註冊" onclick="validCheck()">
+                </form>
+
+
+
+            </div>
+        </div>
+        <script>
+            
+
+            var S = document.getElementById("Sblock");
+            var R = document.getElementById("Rblock");
+            var Sbn = document.getElementById("signin");
+            var Rbn = document.getElementById("register");
+
+            function signin() {
+                console.log("ok")
+                S.style.display = "block";
+                R.style.display = "none"
+                Sbn.style.color = "darkred"
+                Rbn.style.color = "gray"
+            }
+            function register() {
+                console.log("ok")
+                R.style.display = "block";
+                S.style.display = "none"
+                Rbn.style.color = "darkred"
+                Sbn.style.color = "gray"
+            }
+
+            function validCheck() {
+                console.log("ok")
+                let x = document.getElementsByTagName("input")
+                console.log(x)
+                for (var i = 0; i < x.length; i++) {
+                    if (x[i].Validity.valueMissing) {
+                        x[i].setCustomValidity('本欄不可空白')
+                    } else if (x[i].Validity.patternMismatch) {
+                        x[i].setCustomValidity('本欄不可空白')
+                    }
+                }
+            }
+            $(function () {
+        cart = [];
+        cart = JSON.parse(localStorage.getItem("cart"))
+        if(cart.length > 0){
+            pN.innerText = cart.length
+            $("#pN").css("background-color","white");
+            $("#pN").css("border-color","rgb(193, 39, 45)");
+        }
+        })
+        </script>
+        <!-- 右 -->
+        <div id="rightBlock"></div>
+    </div>
+    <div id="pageBottom">
+        <hr>
+        <a href="https://www.facebook.com/profile.php?id=100064288114627"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100064288114627"><i class="fa fa-instagram"></i></a>
+        <a href="mailto:meicho@gmail.com">客服信箱：meicho@gmail.com</a>
+
+    </div>
+</body>

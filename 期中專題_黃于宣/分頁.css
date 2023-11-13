@@ -1,0 +1,160 @@
+.container {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+}
+
+#leftBlock {
+    flex: 1;
+    display: block;
+    /* background-color: lightgrey; */
+
+}
+
+#rightBlock {
+    flex: 1;
+    display: block;
+    /* background-color: lightgrey; */
+
+}
+
+#centerBlock {
+    flex: 2;
+    display: block;
+    padding: 50px;
+    align-items: center;
+    text-align: center;
+    /* background-color: aquamarine; */
+    /* border: 1px solid lightgray; */
+    height: fit-content;
+
+}
+
+#Block {
+    /* background-color: blue;  */
+    border: 1px darkred solid;
+    border-radius: 5px;
+    margin-left: -50px;
+    margin-right: -50px;
+    margin-bottom: 10px;
+
+    padding: 50px 50px 0;
+
+}
+
+.half {
+    display: flex;
+    width: 100%;
+    padding: 0;
+}
+
+.rowImg {
+    flex: 1;
+    margin-right: 10px;
+    padding: 0;
+
+}
+
+.rowImg>img {
+    width: 100%;
+
+}
+
+.mainImg {
+    flex: 2;
+    width: 100%;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.mainImg>img {
+    width: 100%;
+
+}
+
+#price {
+    flex: 2;
+    margin-right: 5px;
+    height: 30px;
+    margin-top: 0;
+    justify-content: center;
+}
+
+table {
+    /*加減數量*/
+    border: 1.5px solid black;
+    border-radius: 5px;
+    flex: 1;
+    margin-right: 5px;
+    text-align: center;
+    height: 30px;
+}
+
+#addCart {
+    border: 1.5px solid darkred;
+    border-radius: 5px;
+    background-color: transparent;
+    color: darkred;
+    cursor: pointer;
+    flex: 1;
+    height: 30px;
+
+
+}
+
+#addCart:hover {
+
+    background-color: darkred;
+    color: white;
+    cursor: pointer;
+
+}
+
+button {
+    border: 0;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#priceArea {
+    text-align: left;
+    /* background-color: aqua; */
+}
+
+hr {
+    border: 1px solid darkred;
+}
+
+#pD {
+    text-align: left;
+    border: 1px darkred solid;
+    border-radius: 5px;
+    margin-left: -50px;
+    margin-right: -50px;
+    padding: 0 50px 1em;
+}
+
+li{
+    list-style-type: disc;
+}
+
+.fa-facebook:hover{
+color: white;
+}
+#pageBottom>a{
+    color: darkred;
+    text-decoration: none;
+}
+
+
+#pageBottom>a:hover{
+    background-color: darkred;
+    color: white;
+}
+#pageBottom {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    bottom: 0;
+}

@@ -1,0 +1,73 @@
+.container{
+    display: flex;
+    width: 100%;
+    height: 500px;
+    height: fit-content;
+}
+#leftBlock{
+    flex: 1;
+    display: block;
+    /* background-color: lightgrey; */
+    
+}
+#rightBlock{
+    flex: 1;
+    display: block;
+    /* background-color: lightgrey; */
+
+}
+
+#centerBlock {
+    flex: 2;
+    display: block;
+    padding: 50px;
+    align-items: center;
+    text-align: center;
+
+}
+#Block {
+    /* background-color: blue; */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    margin: 0 auto 0;
+}
+
+#Block>div>a>img{
+    width: 300px;
+}
+
+#Block>div{
+    margin: 10px;
+    font-size:  16px; ;
+}
+
+button{
+    border: 0;
+    background-color: transparent;
+    font-size:16px ;
+    cursor: pointer;
+}
+
+.fa-facebook:hover {
+    color: white;
+}
+
+#pageBottom>a {
+    color: darkred;
+    text-decoration: none;
+}
+
+
+#pageBottom>a:hover {
+    background-color: darkred;
+    color: white;
+}
+
+#pageBottom {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    bottom: 0;
+}
+

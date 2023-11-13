@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美球水餃-訂購須知</title>
+    <link href="./img cs/logom0728小正.png" rel="icon" type="gif">
+    <link rel="stylesheet" href="./首頁.CSS">
+    <link href="./FAQ .css" rel="stylesheet" type="text/css">
+    <script src="./jquery-3.7.0.min.js"></script>
+    <script src="./jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<script>
+    $(function () {
+        $('#accordion').accordion({
+            active: 2, // 預設0(第一個)展開，可用active指定
+            heightStyle: "content", // 設定高度依照內容調整 
+            create: function (event, ui) {
+                $(".ui-accordion-header-active").css({ // 如何得知class名稱: 1.查官方文件 2.查開發者) 
+                    "border-color": "#0e4b05",
+                    "border-radius": "5px",
+                    "background-color": 'darkred',
+                    "color": "white",
+                    "height": "30px",
+                    "text-align": "center",
+                    "font-size": "20px"
+                }) // create只管剛生成時的樣式
+                $(".ui-accordion-header-collapsed").css({
+                    "border-color": "#0e4b05",
+                    "border-radius": "5px",
+                    "background-color": 'lightgray',
+                    "color": "white",
+                    "height": "30px",
+                    "text-align": "center",
+                    "font-size": "20px"
+                }) // create只管剛生成時的樣式
+            },
+            beforeActivate: function (event, ui) {
+                ui.oldHeader.css({ // 參數名稱參考官方文件
+                    'border-color': "#c5c5c5",
+                    "border-radius": "5px",
+                    "background-color": 'lightgray',
+                    "color": "white",
+                    "height": "30px",
+                    "text-align": "center",
+                    "font-size": "20px"
+                })
+                ui.newHeader.css({
+                    "border-color": "#0e4b05",
+                    "border-radius": "5px",
+                    "background-color": 'darkred',
+                    "color": "white",
+                    "height": "30px",
+                    "text-align": "center",
+                    "font-size": "20px"
+                }) // 在動作前改
+
+            }
+        })
+
+
+
+
+    })
+
+
+</script>
+
+<body>
+    <div id="NAV">
+        <header>
+
+            <!-- 導覽列 -->
+            <div id="logo">
+                <a href="./首頁.html"><img style="height: 80%;" src="./img cs/logom0728.png" alt="美球水餃"></a>
+
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="./product.html">所有產品</a>
+                      
+                    </li>
+                    <li><a href="./store.html">門市資訊</a></li>
+                    <li><a href="./FAQ.html">訂購須知</a></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+
+                </ul>
+
+            </nav>
+            
+        </header>
+    </div>
+    <div id="icons">
+        <a href="./購物車.html"><i id="cartIcon" class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <div id="pN"></div>
+        </a>
+        <hr color="white">
+        <a href="./signin.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+    </div>
+    <div class="container">
+        <!-- 左 -->
+        <div id="leftBlock"></div>
+        <!-- 中 -->
+        <div id="centerBlock">
+            <div id="Block">
+                <div id="cartProduct">
+                    <div id="accordion">
+                        <div>付款方式說明</div>
+                        <div class="DC">1. 信用卡付款：
+                            <br>使用綠界科技刷卡系統，信用卡類型（VISA、MasterCard、JCB、銀聯卡 UnionPay card）皆可使用。<br>
+                        ※ 訂單成立後請於一小時內進行付款作業，否則系統會自動取消訂單，不會另行通知 ※<br>
+                        2. 貨到付款：請於貨物配達時，將訂單款項以現金的方式完成付款。<br>
+                                                
+                        </div>
+                        <div>寄送方式說明</div>
+                        <div class="DC">
+                            1. 為確保新鮮，接單後叫料採用手工製作，急件等訂單問題，請聯絡客服處理。
+                            <br>
+                            2. 黑貓宅急便"全程冷凍"寄送商品。
+                            <br>
+                            3. 配送範圍限台灣本島(各縣市)及外島(不適用本島運費)。
+                            <br>
+                            4. 如本店無法接受您的訂單，將於收到您的訂單後二個工作日內(不含週六日)通知您。
+                            <br>
+                        </div>
+                        <div>運費說明</div>
+                        <div>
+                            <div class="DC">
+                                美球水餃配合黑貓宅急便進行宅配服務，宅配的費用請參考下方表格: (歡迎利用運費計算功能估算運費喔~)</div>
+                            <table>
+                                <tr>
+                                    <td></td>
+                                    <th>60cm以下</th>
+                                    <th>120cm以下</th>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">低溫宅配</th>
+                                    <td>每箱可裝 <label style="color: darkred;font-weight: bolder;">6</label> 包美球水餃</td>
+                                    <td>每箱可裝 <label style="color: darkred;font-weight: bolder;">12</label> 包美球水餃</td>
+                                </tr>
+                                <tr>
+
+                                    <td> <label style="color: darkred;font-weight: bolder;">160</label> 元/箱</td>
+                                    <td> <label style="color: darkred;font-weight: bolder;">290</label> 元/箱</td>
+                                </tr>
+                            </table><br>
+
+                            <form onchange="result.value=dP()">
+                                <label for="pQ">運費計算：</label>
+                                <input id="pQ" type="number" vlaue="1" pattern="[1-]" name="a"
+                                    placeholder="請輸入數量(幾包水餃)" />&nbsp;
+                                <i id = "arrow" class="fa fa-arrow-circle-right" aria-hidden="true"></i>&nbsp;
+                                NT$ <output name="result" for="a b" value="160"></output>元
+                            </form>
+                            <a class="bCat" href="https://www.t-cat.com.tw/inquire/timesheet3.aspx">黑貓宅急便運費說明</a>
+                            <br>
+                            <br>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 右 -->
+        <div id="rightBlock"></div>
+
+    </div>
+    <div id="pageBottom">
+        <hr>
+        <a href="https://www.facebook.com/profile.php?id=100064288114627"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100064288114627"><i class="fa fa-instagram"></i></a>
+        <a href="mailto:meicho@gmail.com">客服信箱：meicho@gmail.com</a>
+
+    </div>
+    <script>
+        
+            function dP() {
+            var pQ = document.getElementById("pQ").value
+            console.log(pQ)
+            if (pQ == "") {
+                return "0"
+            } else if (parseInt(pQ) % 12 != 0) {
+                return parseInt(parseInt(pQ) / 12) * 290 + 160
+            } else {
+                return parseInt(parseInt(pQ) / 12) * 290
+            }
+        }
+        $(function () {
+        cart = [];
+        cart = JSON.parse(localStorage.getItem("cart"))
+        if(cart.length > 0){
+            pN.innerText = cart.length
+            $("#pN").css("background-color","white");
+            $("#pN").css("border-color","rgb(193, 39, 45)");
+        }
+    })
+    </script>
+</body>

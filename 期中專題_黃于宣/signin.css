@@ -1,0 +1,169 @@
+.container{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    
+}
+#leftBlock{
+    flex: 1;
+    display: block;
+    /* background-color: aqua; */
+    
+}
+#rightBlock{
+    flex: 1;
+    display: block;
+    /* background-color: aqua; */
+
+}
+
+#centerBlock {
+    flex: 2;
+    display: block;
+    padding: 50px;
+    align-items: center;
+    text-align: center;
+
+}
+#Block {
+    /* background-color: blue; */
+    display: inline-block;
+    align-items: center;
+    margin: 0 auto 0;
+}
+.signinbn {
+    border: 1.5px solid darkred;
+    border-radius: 5px;
+    background-color: transparent;
+    color: darkred;
+    cursor: pointer;
+
+}
+
+.signinbn:hover {
+
+    background-color: darkred;
+    color: white;
+    cursor: pointer;
+
+}
+
+#signin,
+#register {
+    background-color: transparent;
+    border-width: 0;
+    width: 49%;
+    font-size: 30px;
+    color: darkred;
+    cursor: pointer;
+}
+
+input {
+    border-width: 0 0 1px;
+    font-size: 18px;
+    width: 300px;
+    height: 32px;
+}
+
+/* input:invalid:focus{
+border: 1px solid darkred;
+} */
+
+input:focus {
+    border-width: 0 0 1.5px;
+    border-color: darkred;
+    outline: none;
+
+}
+
+#togglePW {
+    border: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+}
+
+
+#Sblock,
+#Rblock {
+    font-size: 20px;
+    line-height: 2;
+    display: block;
+    text-align: center;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    /* background-color: aqua; */
+    text-align: left;
+}
+
+.signinbn {
+    /* background-color: aquamarine; */
+    display: inline-block;
+    width: 49%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#forgetPW {
+    /* background-color:aquamarine; */
+    color: darkred;
+    font-size: 15px;
+    border: 0;
+    margin: 0;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+#R {
+    float: left;
+    height: 40px;
+    text-align: center;
+}
+
+#F {
+    float: right;
+    height: 40px;
+    
+}
+
+#remember,#remember+label {
+    font-size: 15px;
+    color: black;
+    width: auto;
+    height: 15px;
+}
+
+/* hr{
+    width:1px;
+    height: 30px;
+    border-color: darkred;
+    background-color: darkred;
+    display: inline-block;
+} */
+
+.fa-facebook:hover {
+    color: white;
+}
+
+#pageBottom>a {
+    color: darkred;
+    text-decoration: none;
+}
+
+
+#pageBottom>a:hover {
+    background-color: darkred;
+    color: white;
+}
+
+#pageBottom {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    background-color: white;
+    bottom: 0;
+}

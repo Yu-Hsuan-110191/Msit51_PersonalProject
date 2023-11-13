@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美球水餃-分店據點</title>
+    <link href="./img cs/logom0728小正.png" rel="icon" type="gif">
+    <link rel="stylesheet" href="./首頁.CSS">
+    <link href="./store.css" rel="stylesheet" type="text/css">
+    <script src="./jquery-3.7.0.min.js"></script>
+    <script src="./jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<script>
+    $(function () {
+        $('#accordion').accordion({
+            active: 0, // 預設0(第一個)展開，可用active指定
+            heightStyle: "content", // 設定高度依照內容調整 
+            create: function (event, ui) {
+                $(".ui-accordion-header-active").css({ // 如何得知class名稱: 1.查官方文件 2.查開發者) 
+                    "border-color": "#0e4b05",
+                    "border-radius": "5px",
+                    "background-color": 'darkred',
+                    "color": "white",
+                    "height": "30px",
+                    "text-align": "center",
+                    "font-size": "20px"
+                }) // create只管剛生成時的樣式
+                $(".ui-accordion-header-collapsed").css({
+                    "border-color": "#0e4b05",
+                    "border-radius": "5px",
+                    "background-color": 'lightgray',
+                    "color": "white",
+                    "height": "30px",
+                    "text-align": "center",
+                    "font-size": "20px"
+                }) // create只管剛生成時的樣式
+            },
+            beforeActivate: function (event, ui) {
+                ui.oldHeader.css({ // 參數名稱參考官方文件
+                    'border-color': "#c5c5c5",
+                    "border-radius": "5px",
+                    "background-color": 'lightgray',
+                    "color": "white",
+                    "height": "30px",
+                    "text-align": "center",
+                    "font-size": "20px"
+                })
+                ui.newHeader.css({
+                    "border-color": "#0e4b05",
+                    "border-radius": "5px",
+                    "background-color": 'darkred',
+                    "color": "white",
+                    "height": "30px",
+                    "text-align": "center",
+                    "font-size": "20px"
+                }) // 在動作前改
+
+            }
+        })
+        
+        cart = [];
+        cart = JSON.parse(localStorage.getItem("cart"))
+        if(cart.length > 0){
+            pN.innerText = cart.length
+            $("#pN").css("background-color","white");
+            $("#pN").css("border-color","rgb(193, 39, 45)");
+        }
+
+
+
+        
+    })
+
+
+</script>
+
+<body>
+    <div id="NAV">
+        <header>
+
+            <!-- 導覽列 -->
+            <div id="logo">
+                <a href="./首頁.html"><img style="height: 80%;" src="./img cs/logom0728.png" alt="美球水餃"></a>
+
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="./product.html">所有產品</a>
+                      
+                    </li>
+                    <li><a href="./store.html">門市資訊</a></li>
+                    <li><a href="./FAQ.html">訂購須知</a></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+
+                </ul>
+
+            </nav>
+            
+        </header>
+        <hr color="darkred">
+        <div id="icons">
+            <a href="./購物車.html"><i id="cartIcon" class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <div id="pN"></div>
+            </a>
+            <hr color="white">
+            <a href="./signin.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <div class="container">
+        <!-- 左 -->
+        <div id="leftBlock"></div>
+        <!-- 中 -->
+        <div id="centerBlock">
+            <div id="Block">
+                <div id="cartProduct">
+                    <div id="accordion">
+                        <div>美球1號</div>
+                        <div class="divblock">
+                            <div class="div1" width="100%">
+                                <img width="100%" src="./img cs/store1.png"><br>
+                            </div>
+                            <div class="div2">
+                                最近開新店囉(東村六街)！<br>
+                                闆娘熱情邀請舊雨新知繼續支持。<br>
+                                <a target="_blank" href="https://goo.gl/maps/RKeRgDdqnh8HVfC2A"><i class="fa fa-map-marker" aria-hidden="true"></i>411 台中市太平區東平路375巷31弄1號</a>
+                                <br>
+                            </div>
+
+                        </div>
+                        <div>美球20號</div>
+                        <div class="divblock">
+                            <div class="div1">
+                                <img width="100%" src="./img cs/store20.jpg"><br>
+                            </div>
+                            <div class="div2">
+                                最近開新店囉(東村六街)！<br>
+                                闆娘熱情邀請舊雨新知繼續支持。<br>
+                                <a target="_blank" href="https://goo.gl/maps/BuzA3TMkjagnMLzW8"><i class="fa fa-map-marker" aria-hidden="true"></i>411 台中市太平區東村路22巷20號</a>
+                                <br>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 右 -->
+        <div id="rightBlock"></div>
+
+    </div>
+    <div id="pageBottom">
+        <hr>
+        <a href="https://www.facebook.com/profile.php?id=100064288114627"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100064288114627"><i class="fa fa-instagram"></i></a>
+        <a href="mailto:meicho@gmail.com">客服信箱：meicho@gmail.com</a>
+
+    </div>
+
+</body>
