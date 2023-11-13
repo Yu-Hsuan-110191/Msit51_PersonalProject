@@ -70,7 +70,7 @@
                                 <th><button onclick="plus(this, 1)" style="font-size: 18px;">+</button></th>
                             </tr>
                         </table>
-                        <button id="addCart">加入購物車</button>
+                        <button class="addCart">加入購物車</button>
                     </div>
                     <!-- <div style="text-align: left;">配合活動</div> -->
                 </div>
@@ -141,7 +141,7 @@
 
         $(function () {
             // product頁及商品分頁的加到購物車
-            $("#addCart").click(function () {
+            $(".addCart").click(function () {
                 console.log("ok")
                 var cart = [];
                 if (localStorage.getItem("cart")) {

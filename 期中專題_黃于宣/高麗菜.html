@@ -69,7 +69,7 @@
                                 <th><button onclick="plus(this, 1)" style="font-size: 18px;">+</button></th>
                             </tr>
                         </table>
-                        <button id="addCart">加入購物車</button>
+                        <button class="addCart">加入購物車</button>
                     </div>
                     <!-- <div style="text-align: left;">配合活動</div> -->
                 </div>
@@ -140,7 +140,7 @@
 
         $(function () {
             // product頁及商品分頁的加到購物車
-            $("#addCart").click(function () {
+            $(".addCart").click(function () {
                 console.log("ok")
                 var cart = [];
                 if (localStorage.getItem("cart")) {
@@ -167,7 +167,7 @@
 
                 let newItem;
                 if (cart.length > 0) {
-                    
+
                     let repeat = true;
                     for (var i = 0; i < cart.length; i++) {
                         console.log('9999999999is here!')
@@ -208,15 +208,20 @@
                 }
                 console.log(cart)
                 localStorage.setItem("cart", JSON.stringify(cart))
+                if (cart.length > 0) {
+                pN.innerText = cart.length;
+                $("#pN").css("background-color", "white");
+                $("#pN").css("border-color", "rgb(193, 39, 45)");
+            }
             })
 
             var cart = [];
             cart = JSON.parse(localStorage.getItem("cart"))
-            if(cart.length > 0){
-            pN.innerText = cart.length;
-            $("#pN").css("background-color","white");
-            $("#pN").css("border-color","rgb(193, 39, 45)");
-        }
+            if (cart.length > 0) {
+                pN.innerText = cart.length;
+                $("#pN").css("background-color", "white");
+                $("#pN").css("border-color", "rgb(193, 39, 45)");
+            }
 
 
         })

@@ -301,7 +301,11 @@
             }
             console.log(cart)
             localStorage.setItem("cart", JSON.stringify(cart))
-
+            if (cart.length > 0) {
+                pN.innerText = cart.length
+                $("#pN").css("background-color", "white");
+                $("#pN").css("border-color", "rgb(193, 39, 45)");
+            }
         })
 
 
@@ -309,10 +313,10 @@
         cart = [];
         cart = JSON.parse(localStorage.getItem("cart"))
 
-        if(cart.length > 0){
+        if (cart.length > 0) {
             pN.innerText = cart.length
-            $("#pN").css("background-color","white");
-            $("#pN").css("border-color","rgb(193, 39, 45)");
+            $("#pN").css("background-color", "white");
+            $("#pN").css("border-color", "rgb(193, 39, 45)");
         }
 
     })

@@ -151,7 +151,7 @@
                                 </tr>
                             </table><br>
 
-                            <form onchange="result.value=dP()">
+                            <form onchange="result.value=dP()" onkeypress="if(event.keyCode == 13){result.value=dP(); return false;}">
                                 <label for="pQ">運費計算：</label>
                                 <input id="pQ" type="number" vlaue="1" pattern="[1-]" name="a"
                                     placeholder="請輸入數量(幾包水餃)" />&nbsp;
